@@ -21,12 +21,14 @@
 
 en:
   hello: "Hello world"
-  footer: Все права защищены
+  footer: "\u00A9 Все права защищены"
   menu:
     main: Главная
     contacts: Контакты
     about: О нас
     blog: Блог
+  search:
+    find: Найти!
   main:
     title: Купить тур онлайн в Беларуси
     h1: Поиск тура

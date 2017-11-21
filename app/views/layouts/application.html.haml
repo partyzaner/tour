@@ -8,8 +8,8 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     %header
-      =image_tag('IMG_2553.JPG', {:class => 'logo_img'})
       %div.container
+        =image_tag('IMG_2553.JPG', {:class => 'logo_img'})
         %nav{:class => 'navbar navbar-expand-md navbar-light',
           :style => 'background-color: #e3f2fd;'}
           %button{:class=>'navbar-toggler navbar-toggler-right',
@@ -23,24 +23,14 @@
           %a.navbar-brand TODO image
           %div{:class => 'collapse navbar-collapse', :id => 'navbarNav'}
             %div.navbar-nav
-              =link_to t('menu.main'), '#', {:class => 'nav-item nav-link'}
-              =link_to t('menu.contacts') , '#', {:class => 'nav-item nav-link'}
-              =link_to t('menu.blog'), '#', {:class => 'nav-item nav-link'}
-              =link_to t('menu.about'), '#', {:class => 'nav-item nav-link'}
-        -#%li{:role => 'presentation', :class => 'dropdown'}
-        -#  =link_to 'Dropdown', {:class => 'dropdown-toggle',
-        -#   :'data-toggle' => 'dropdown',
-        -#   :href => '#',
-        -#   :role => 'button',
-        -#   :'aria-haspopup' => true,
-        -#   :'aria-expanded' => false} do
-        -#    %span.caret
-        -#  %ul.dropdown-menu
-        -#    %li trololo
-        -#    %li trololo
+              =link_to t('menu.main'), root_path, {:class => 'nav-item nav-link'}
+              =link_to t('menu.contacts') , contacts_path, {:class => 'nav-item nav-link'}
+              =link_to t('menu.blog'), blog_path, {:class => 'nav-item nav-link'}
+              =link_to t('menu.about'), about_path, {:class => 'nav-item nav-link'}
 
     %main{:class => 'container', :role => 'main'}
-    = yield
+      %div.container
+        =yield
     %div{:id=>'footer'}
       %div.navbar-inner
         %div.container

@@ -1,32 +1,52 @@
 -content_for :page_title do
   =t('main.title')
--#%nav.navbar.navbar-toggleable-md.navbar-light.bg-faded
--#  %button{:class => 'navbar-toggler navbar-toggler-right',
--#          :type => 'button',
--#          :'data-toggle' => 'collapse',
--#          :'data-target' => '#navbarSupportedContent',
--#          :'aria-controls' => 'navbarSupportedContent',
--#          :'aria-expanded' => false,
--#          :'aria-label' => 'Toggle navigation'}
--#    %span.navbar-toggler-icon
--#  %a{:class => 'navbar-brand', :href =>'#'} Турист.by
--#
--#  %div{:class=>'collapse navbar-collapse', :id=>'navbarSupportedContent'}
--#    %ul.navbar-nav.mr-auto
--#      %li.nav-item.active
--#        = link_to '#', class: 'nav-link disabled' do
--#          %span.sr-only (current)
--#      %li.nav-item
--#        %a{:class => 'nav-link disabled', :href => '#'} Войти
--#    %form.form-inline.my-2.my-lg-0
--#      %input{:class => 'form-control mr-sm-2', :type => 'text', :placeholder => 'Имя пользователя'}
--#      %input{:class => 'form-control mr-sm-2', :type => 'password', :placeholder => 'Пароль'}
--#      %button{:class => 'btn btn-outline-success my-2 my-sm-0', :type => 'submit' } Войти
-%h1
-  =t('main.h1')
+%h1=t('main.h1')
 %form.form-inline.my-2.my-lg-0
-  %input{:class => 'form-control mr-sm-2', :type => 'text', :placeholder => 'Откуда'}
-  %input{:class => 'form-control mr-sm-2', :type => 'text', :placeholder => 'Куда'}
-  %input{:class => 'form-control mr-sm-2', :type => 'text', :placeholder => 'Человек'}
-  %input{:class => 'form-control mr-sm-2', :type => 'text', :placeholder => 'Ночей'}
-  %button{:class => 'btn btn-outline-success my-2 my-sm-0', :type => 'submit' } Найти!
+  -#%input{:class => 'form-control mr-sm-2', :type => 'text', :placeholder => 'Откуда'}
+  %div.form-group.ml-2
+    %label Страна
+    %select{:class => 'form-control', :id => 'country'}
+      %option Египет
+      %option Турция
+      %option Сомали
+      %option Сирия
+  %div.form-group.ml-2
+    %label Курорт
+    %select{:class => 'form-control', :id => 'resort'}
+      %option Salam aleikum
+      %option 2
+      %option 3
+      %option 4
+  -#%input{:class => 'form-control mr-sm-2', :type => 'text', :placeholder => 'Куда'}
+  %div.form-group.ml-2
+    %label Вылет из
+    %select{:class => 'form-control', :id => 'from'}
+      %option{:selected => 'selected'} Минск
+      %option Киев
+      %option Москва
+      %option Санкт-Петербург
+  %div.form-group.ml-2
+    %label Туристов
+    %select{:class => 'form-control', :id => 'peoples'}
+      %option 1
+      %option{:selected => 'selected'} 2
+      %option 3
+      %option 4
+  %div.form-group.ml-2
+    %label Ночей
+    %select{:class => 'form-control', :id => 'nights'}
+      %option 1
+      %option 2
+      %option 3
+      %option 5
+      %option 6
+      %option{:selected => 'selected'} 7
+      %option 8
+      %option 9
+      %option 10
+      %option 11
+      %option 12
+      %option 13
+      %option 14
+      %option 15
+  %button{:class => 'btn btn-info my-2 my-sm-0 ml-3', :type => 'submit'}=t('search.find')

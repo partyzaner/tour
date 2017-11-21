@@ -21,6 +21,14 @@
 
 en:
   hello: "Hello world"
+  footer: Все права защищены
+  menu:
+    main: Главная
+    contacts: Контакты
+    about: О нас
+    blog: Блог
   main:
     title: Купить тур онлайн в Беларуси
-    h1: Купить тур онлайн
+    h1: Поиск тура
+
+

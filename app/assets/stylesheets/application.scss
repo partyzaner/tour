@@ -14,11 +14,26 @@
  */
 @import "bootstrap";
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   background-color: #DDDDDD;
+  margin-bottom: 60px;
 }
 
 .logo_img {
   height: 280px;
   width: 100%;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #CCCCCC;
 }

@@ -30,12 +30,23 @@
               =link_to t('menu.blog'), blog_path, {:class => 'nav-item nav-link'}
               =link_to t('menu.about'), about_path, {:class => 'nav-item nav-link'}
             %div.navbar-nav.ml-auto
-              =link_to t('menu.enter'), '#', {class: 'nav-item nav-link'}
-              =link_to t('menu.register'), '#', {class: 'nav-item nav-link'}
+              -unless user_signed_in?
+                =link_to t('menu.enter'), new_user_session_path, {class: 'nav-item nav-link'}
+                =link_to t('menu.register'), new_user_registration_path, {class: 'nav-item nav-link'}
+              -else
+                =link_to current_user.email, edit_user_registration_path, {class: 'nav-item nav-link'}
+                =link_to 'Выйти', destroy_user_session_path, {method: :delete, class: 'nav-item nav-link'}
 
     %main{:class => 'container', :role => 'main'}
+      .container
+      -if notice
+        %p.alert.alert-info= notice
+      -if alert
+        %p.alert.alert-danger= alert
       %div.container
         =yield
+      .container
+        %br
     %div{:id=>'footer'}
       %div.navbar-inner
         %div.container

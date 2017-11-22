@@ -20,13 +20,18 @@
            :'aria-expanded' => 'false',
            :'aria-label' => 'Toggle navigation'}
             %span{:class=>'navbar-toggler-icon'}
-          %a.navbar-brand TODO image
+          =link_to(image_tag('logo_navbar_alpha.png', {class: 'logo_navbar'}),
+            root_path,
+            {class: 'navbar-brand'})
           %div{:class => 'collapse navbar-collapse', :id => 'navbarNav'}
             %div.navbar-nav
               =link_to t('menu.main'), root_path, {:class => 'nav-item nav-link'}
               =link_to t('menu.contacts') , contacts_path, {:class => 'nav-item nav-link'}
               =link_to t('menu.blog'), blog_path, {:class => 'nav-item nav-link'}
               =link_to t('menu.about'), about_path, {:class => 'nav-item nav-link'}
+            %div.navbar-nav.ml-auto
+              =link_to t('menu.enter'), '#', {class: 'nav-item nav-link'}
+              =link_to t('menu.register'), '#', {class: 'nav-item nav-link'}
 
     %main{:class => 'container', :role => 'main'}
       %div.container
@@ -34,5 +39,4 @@
     %div{:id=>'footer'}
       %div.navbar-inner
         %div.container
-          %span.text-muted
-            =t('footer')
+          %span.text-muted=t('footer')
